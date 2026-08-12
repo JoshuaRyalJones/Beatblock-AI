@@ -1,0 +1,19 @@
+# Deterministic candidate-generation rule families (SPEC.md §10).
+# Populated in M1. Each enabled family must have unit tests before it ships.
+#
+# Planned families:
+#   diatonic_triads
+#   diatonic_sevenths
+#   diatonic_ninths
+#   harmonic_minor_dominant
+#   secondary_dominants
+#   modal_mixture
+#   passing_diminished
+#   jazz_extensions
+
+candidates:
+  min_count: 10
+  max_count: 30
+  allow_repeat_of_last_chord: false
+
+families: {}

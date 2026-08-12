@@ -1,0 +1,2 @@
+# Supervised fine-tuning configuration (TRL SFTTrainer + PEFT LoRA).
+# Populated in M5 — see SPEC.md §19. Do not invent hyperparameters before then.

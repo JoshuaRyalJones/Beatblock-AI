@@ -1,0 +1,2 @@
+# Direct Preference Optimization configuration (TRL DPOTrainer).
+# Populated in M7 — see SPEC.md §21. Runs as a separate experiment from SFT.

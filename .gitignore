@@ -1,0 +1,44 @@
+# Environments
+.venv/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Models and training artifacts — never commit weights
+models/
+checkpoints/
+outputs/
+artifacts/
+runs/
+wandb/
+.cache/
+huggingface/
+
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Data: private, raw, and generated
+data/private/
+data/raw/
+*.db
+*.sqlite
+*.sqlite3
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
