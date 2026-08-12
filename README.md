@@ -111,12 +111,50 @@ Pydantic · Typer · Rich · music21 · pytest · Ruff
 
 ## Development
 
+### Prerequisites
+
+Install Python 3.11 and `uv`. On Apple Silicon macOS with Homebrew:
+
+```bash
+brew install python@3.11 uv
+```
+
+Then create the project environment and install the lightweight CLI dependencies:
+
 ```bash
 uv sync
 uv run beatblock --help
 uv run ruff check .
 uv run pytest
 ```
+
+The base install intentionally excludes PyTorch and the model-training stack. Add those when
+M2 (local inference) begins:
+
+```bash
+uv sync --extra ml
+```
+
+You do not need a Hugging Face account or token for M0 or M1. Model weights, local virtual
+environments, and caches stay outside Git.
+
+### Learning checkpoints
+
+Treat each milestone as a small experiment with a question you should be able to answer:
+
+1. **M0 — tooling:** Can you run, test, and lint a Python CLI reproducibly?
+2. **M1 — music engine:** Can you explain and test every rule that proposes a chord?
+3. **M2–M3 — inference and evaluation:** How does prompting become validated rankings, and how
+   do we establish an honest baseline before training?
+4. **M4–M5 — data and SFT:** How do reviewed labels, leakage-safe splits, LoRA, and
+   hyperparameters affect the frozen metrics?
+5. **M6–M9 — preferences:** How do user choices become DPO pairs or explicit rewards without
+   confusing every click with musical quality?
+
+AI can help scaffold code, explain APIs, propose tests, and review experiment results. You
+should remain the decision-maker for music-theory rules, manually review golden examples,
+choose evaluation criteria before seeing results, and write a short hypothesis before each
+training run. That is where most of the ML learning lives.
 
 `ruff check` and `pytest` must pass before any task is considered complete.
 
