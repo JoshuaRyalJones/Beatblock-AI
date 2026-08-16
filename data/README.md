@@ -9,11 +9,17 @@ databases, and anything under `data/private/` or `data/raw/` are git-ignored.
 samples/golden_sample.jsonl      illustrative SFT records (M4)
 samples/preference_sample.jsonl  illustrative chosen/rejected pairs (M6/M7)
 eval/eval_sample.jsonl           illustrative evaluation records (M3)
+eval/eval_v1.jsonl               frozen baseline evaluation records (M3)
 ```
 
 The sample files are placeholders until the schemas are frozen. The real frozen evaluation set
 is versioned separately (`eval_v1.jsonl`, etc.) and must never change once baseline metrics
 have been recorded against it.
+
+`eval_v1.jsonl` is intentionally small and human-reviewable. Each record freezes the exact
+candidate set used for comparison so candidate-generator changes cannot silently move the
+benchmark. Expand it by creating a new dataset version, never by editing it after baseline
+results exist.
 
 ## Golden record schema (SPEC.md §14)
 

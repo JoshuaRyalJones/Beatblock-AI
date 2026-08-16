@@ -135,8 +135,10 @@ M2 (local inference) begins:
 uv sync --extra ml
 ```
 
-You do not need a Hugging Face account or token for M0 or M1. Model weights, local virtual
-environments, and caches stay outside Git.
+The first `beatblock recommend` run downloads the configured model from Hugging Face. For the
+default Qwen3-1.7B model, allow roughly 4 GB for model files plus working space. A Hugging Face
+account and token are optional for this ungated model, though authenticated downloads receive
+higher rate limits. Model weights, local virtual environments, and caches stay outside Git.
 
 ### Learning checkpoints
 

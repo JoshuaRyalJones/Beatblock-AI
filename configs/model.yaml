@@ -2,10 +2,11 @@
 # The model identifier must only be referenced from here — never hard-coded in source.
 model:
   id: Qwen/Qwen3-1.7B
-  max_new_tokens: 512
+  max_new_tokens: 128
   temperature: 0.7
   top_p: 0.8
   top_k: 20
+  do_sample: false
   enable_thinking: false
 
 # Device is resolved at load time: cuda -> mps -> cpu, unless pinned here.

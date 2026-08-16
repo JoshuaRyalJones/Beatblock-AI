@@ -39,3 +39,22 @@ class CandidateChord(BaseModel):
     function: str
     source_rule: str
     theory_score: float = Field(ge=0.0, le=1.0)
+
+
+class RankedCandidate(BaseModel):
+    """A model-ranked candidate returned to the user."""
+
+    symbol: str
+    rank: int = Field(ge=1)
+    model_score: float = Field(ge=0.0, le=1.0)
+    reason: str = Field(min_length=1)
+
+
+class RecommendationResult(BaseModel):
+    """Validated output of the complete recommendation pipeline."""
+
+    context: RecommendationContext
+    candidates_generated: int = Field(ge=1)
+    recommendations: list[RankedCandidate] = Field(min_length=3)
+    model_id: str
+    model_version: str | None = None
